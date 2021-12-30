@@ -20,4 +20,16 @@ export class LaunchDetailsComponent {
     switchMap((id) => this.launchDetailsService.fetch({ id })),
     map((res) => res.data.launch)
   );
+
+/**
+ * autre façon pour écrire le meme code
+ **/
+
+  // launchDetails$ = this.route.paramMap.pipe(
+  //   switchMap( params => {
+  //   const id = params.get('id');
+  //   return this.launchDetailsService.fetch({ id })
+  //   }),
+  //   map((res) => res.data.launch)
+  // );
 }
